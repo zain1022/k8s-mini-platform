@@ -1,5 +1,5 @@
 # k8s-mini-platform
-What this is:
+## What this is:
 * A Kubernetes mini-platform running a containerized FastAPI service on Minikube with rolling updates, autoscaling, and health checks.
 ## Architecture:
 * Deployment (replicas)
@@ -7,6 +7,8 @@ What this is:
 * ConfigMap
 * Probes
 * HPA
+## How to run:
+## Demo Commands:
 ## Important Troubleshooting Commands:
 * kubectl logs -n mini-platform deploy/mini-api --tail=50
 * kubectl describe pod -n mini-platform <pod-name>
