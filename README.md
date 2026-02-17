@@ -60,6 +60,7 @@
   * kubectl get hpa -n mini-platform -w
   * kubectl get deploy -n mini-platform -w
 * You can stop load with Ctrl+C in the loadgen terminal.
+* When you generate load you should see CPU utilization change and more replicas created, once you stop the load it should terminate the other ones and scale down back to it's original utilization.
 ## Demo Commands:
 * kubectl describe deploy -n mini-platform mini-api
 ## Important Troubleshooting Commands:
