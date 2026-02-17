@@ -1,5 +1,6 @@
 # k8s-mini-platform
-step-by-step Minikube build plan for Project 2 (Kubernetes Mini-Platform)
+What this is:
+* A Kubernetes mini-platform running a containerized FastAPI service on Minikube with rolling updates, autoscaling, and health checks.
 
 TROUBLESHOOTING:
 * kubectl logs -n mini-platform deploy/mini-api --tail=50
