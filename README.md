@@ -122,10 +122,15 @@ kubectl describe pod -n mini-platform <pod-name>
 ```powershell
 kubectl get events -n mini-platform --sort-by=.metadata.creationTimestamp | Select-Object -Last 20
 ```
-* Exec into a pod: kubectl exec -n mini-platform -it <pod-name> -- sh
+* Exec into a pod:
+```powershell
+kubectl exec -n mini-platform -it <pod-name> -- sh
+```
   * Check env vars inside pod:
-    * echo $ENV
-    * echo $MESSAGE
+    ```powershell
+    echo $ENV
+    echo $MESSAGE
+    ```
 ### Service & endpoints checks
 ```powershell
 kubectl get svc -n mini-platform
