@@ -119,7 +119,11 @@
 * kubectl scale deployment -n mini-platform mini-api --replicas=2
 #### Other commands:
 * kubectl describe deploy -n mini-platform mini-api
-## Important Troubleshooting Commands:
+### Convenience Scripts
+* scripts/start.ps1 – starts Minikube and deploys the app
+* scripts/deploy.ps1 – rebuilds the image and performs a rolling update
+* scripts/portforward.ps1 – exposes the service locally
+### Important Troubleshooting Commands:
 * kubectl logs -n mini-platform deploy/mini-api --tail=50
 * kubectl describe pod -n mini-platform <pod-name>
 * kubectl get events -n mini-platform --sort-by=.metadata.creationTimestamp | Select-Object -Last 20
