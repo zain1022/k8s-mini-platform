@@ -49,7 +49,7 @@
   * ```kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0```
   * ```kubectl rollout status -n mini-platform deployment/mini-api```
   * ```kubectl get pods -n mini-platform```
-  * Confirm it's updated by refreshing 'http://localhost:8080/items', we should see the new changes there.
+  * Confirm it's updated by refreshing http://localhost:8080/items, we should see the new changes there.
 * We can also do a rollback:
   * ```kubectl rollout undo -n mini-platform deployment/mini-api```
   * ```kubectl rollout status -n mini-platform deployment/mini-api```
