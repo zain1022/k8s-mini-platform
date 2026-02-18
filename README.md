@@ -62,6 +62,22 @@
 * You can stop load with Ctrl+C in the loadgen terminal.
 * When you generate load you should see CPU utilization change and more replicas created, once you stop the load it should terminate the other ones and scale down back to it's original utilization.
 ## Here is an overall breakdown of Demo Commands used including some already mentioned in the 'how to run' section:
+### Start Minikube + Prereqs:
+* minikube start --driver=docker
+* minikube addons enable metrics-server
+* kubectl get nodes
+* kubectl top nodes
+### Point Docker to Minikube’s Docker (IMPORTANT on Windows)
+* & minikube -p minikube docker-env --shell powershell | Invoke-Expression
+### Build the Docker image
+### Deploy to Kubernetes
+### Access the service (port-forward)
+### Rolling update (deploy new version)
+### Rollback (undo deployment)
+### Autoscaling (HPA) demo – generate load
+### Debug / Troubleshooting commands (very important for interviews)
+### Service & endpoints checks
+### Scale manually (optional cleanup)
 * kubectl describe deploy -n mini-platform mini-api
 * kubectl get pods -n mini-platform
 * kubectl get hpa -n mini-platform
