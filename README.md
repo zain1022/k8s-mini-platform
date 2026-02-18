@@ -104,8 +104,20 @@
   * kubectl get deploy -n mini-platform -w
 * Stop load -> Ctrl+C in the busybox terminal
 ### Debug / Troubleshooting commands (very important for interviews)
+* kubectl logs -n mini-platform deploy/mini-api --tail=50
+* kubectl logs -n mini-platform <pod-name> --previous
+* kubectl describe pod -n mini-platform <pod-name>
+* kubectl get events -n mini-platform --sort-by=.metadata.creationTimestamp | Select-Object -Last 20
+* Exec into a pod: kubectl exec -n mini-platform -it <pod-name> -- sh
+  * Check env vars inside pod:
+    * echo $ENV
+    * echo $MESSAGE
 ### Service & endpoints checks
+* kubectl get svc -n mini-platform
+* kubectl get endpoints -n mini-platform mini-api-svc
 ### Scale manually (optional cleanup)
+* kubectl scale deployment -n mini-platform mini-api --replicas=2
+#### Other commands:
 * kubectl describe deploy -n mini-platform mini-api
 * kubectl get pods -n mini-platform
 * kubectl get hpa -n mini-platform
