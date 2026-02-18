@@ -77,25 +77,32 @@
 ### Deploy to Kubernetes
 * kubectl apply -f manifests/ (Can also apply each manifest individually)
 * Check status:
- * kubectl get all -n mini-platform
- * kubectl get pods -n mini-platform
-* Watch pods -> kubectl get pods -n mini-platform -w
+  * kubectl get all -n mini-platform
+  * kubectl get pods -n mini-platform
+  * Watch pods -> kubectl get pods -n mini-platform -w
 ### Access the service (port-forward)
 * kubectl port-forward -n mini-platform svc/mini-api-svc 8080:80
 ### Rolling update (deploy new version)
 * docker build --no-cache -t mini-api:2.0 .
 * Update deployment:
- *  kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0
- *  kubectl rollout status -n mini-platform deployment/mini-api
- *  kubectl get pods -n mini-platform
+  *  kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0
+  *  kubectl rollout status -n mini-platform deployment/mini-api
+  *  kubectl get pods -n mini-platform
 ### Rollback (undo deployment)
 * kubectl rollout undo -n mini-platform deployment/mini-api
 * kubectl rollout status -n mini-platform deployment/mini-api
 ### Autoscaling (HPA) demo – generate load
 * Check HPA + metrics:
+  * kubectl get hpa -n mini-platform
+  * kubectl top pods -n mini-platform
 * Start load generator:
+  * kubectl run -n mini-platform loadgen --rm -it --image=busybox -- sh
 * Inside the pod:
+  * while true; do wget -q -O- http://mini-api-svc/health > /dev/null; done
 * Watch scaling (new terminal):
+  * kubectl get hpa -n mini-platform -w
+  * kubectl get deploy -n mini-platform -w
+* Stop load -> Ctrl+C in the busybox terminal
 ### Debug / Troubleshooting commands (very important for interviews)
 ### Service & endpoints checks
 ### Scale manually (optional cleanup)
