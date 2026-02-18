@@ -15,8 +15,10 @@
 * HPA
 ## How to run:
 * Make sure you have Minikube and Docker Desktop both installed on your machine. The project can be done on a terminal or IDE, I chose to do it on VS code.
-* Go to VS Code terminal and type: ```powershell minikube start --driver=docker```
-* Once it is running, you can try ```powershell kubectl get nodes```, to see if kubectl works and gives you a list of nodes in your cluster.
+* Go to VS Code terminal and type: ```powershell
+minikube start --driver=docker```
+* Once it is running, you can try ```powershell
+kubectl get nodes```, to see if kubectl works and gives you a list of nodes in your cluster.
 * You can also do 'kubectl get all' to see all services.
 * (Optional but recommended): Type 'minikube addons enable metrics-server' and then 'kubectl top nodes' to verify metrics-server is working. This is important when we want Horizontal pod scaling to work.
 * Make sure you have all the necessary files/code, including the .py file, yaml files, requirements.txt, and the dockerfile.
