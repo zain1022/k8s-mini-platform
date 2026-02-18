@@ -1,6 +1,12 @@
 # k8s-mini-platform
 ## What this is:
 * A Kubernetes mini-platform running a containerized FastAPI service on Minikube with rolling updates, autoscaling, and health checks.
+## Prerequisites
+* Windows + PowerShell
+* Docker Desktop
+* Minikube
+* kubectl
+* (Optional) VS Code
 ## Architecture:
 * Deployment (replicas)
 * Service (ClusterIP)
@@ -45,7 +51,7 @@
   * kubectl get pods -n mini-platform
   * Confirm it's updated by refreshing 'http://localhost:8080/items', we should see the new changes there.
 * We can also do a rollback:
-  * kubectl rollout undo -n mini-platform deployment/mini-ap
+  * kubectl rollout undo -n mini-platform deployment/mini-api
   * kubectl rollout status -n mini-platform deployment/mini-api
   * When you refresh page/items should be back to how they were before the update.
 * Lastly, we can also do an autoscaling (HPA) demo:
@@ -113,8 +119,10 @@
     * echo $ENV
     * echo $MESSAGE
 ### Service & endpoints checks
+```powershell
 * kubectl get svc -n mini-platform
 * kubectl get endpoints -n mini-platform mini-api-svc
+```
 ### Scale manually (optional cleanup)
 * kubectl scale deployment -n mini-platform mini-api --replicas=2
 #### Other commands:
