@@ -61,8 +61,19 @@
   * kubectl get deploy -n mini-platform -w
 * You can stop load with Ctrl+C in the loadgen terminal.
 * When you generate load you should see CPU utilization change and more replicas created, once you stop the load it should terminate the other ones and scale down back to it's original utilization.
-## Demo Commands:
+## Here is an overall breakdown of Demo Commands used including some already mentioned in the 'how to run' section:
 * kubectl describe deploy -n mini-platform mini-api
+* kubectl get pods -n mini-platform
+* kubectl get hpa -n mini-platform
+* kubectl get all -n mini-platform
+* kubectl top nodes
+* kubectl top pods -n mini-platform
+* & minikube -p minikube docker-env --shell powershell | Invoke-Expression
+* docker build -t mini-api:2.0 .
+* kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0
+* kubectl rollout status -n mini-platform deployment/mini-api
+* kubectl rollout undo -n mini-platform deployment/mini-api
+* kubectl rollout status -n mini-platform deployment/mini-api
 ## Important Troubleshooting Commands:
 * kubectl logs -n mini-platform deploy/mini-api --tail=50
 * kubectl describe pod -n mini-platform <pod-name>
