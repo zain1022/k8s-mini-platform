@@ -72,14 +72,9 @@
 ### Start Minikube + Prereqs:
 ```powershell
 minikube start --driver=docker
-```
-```powershell
 minikube addons enable metrics-server
-```
-```powershell
+
 kubectl get nodes
-```
-```powershell
 kubectl top nodes
 ```
 ### Point Docker to Minikube’s Docker (IMPORTANT on Windows)
@@ -90,14 +85,25 @@ kubectl top nodes
 ```powershell
 docker build -t mini-api:1.0 .
 docker images mini-api
-Rebuild for update (force clean build): docker build --no-cache -t mini-api:2.0 .
+```
+Rebuild for update (force clean build): 
+```powershell
+docker build --no-cache -t mini-api:2.0 .
 ```
 ### Deploy to Kubernetes
-* kubectl apply -f manifests/ (Can also apply each manifest individually)
+```powershell
+kubectl apply -f manifests/
+```
+* (Can also apply each manifest individually)
 * Check status:
-  * kubectl get all -n mini-platform
-  * kubectl get pods -n mini-platform
-  * Watch pods -> kubectl get pods -n mini-platform -w
+  ```powershell
+  kubectl get all -n mini-platform
+  kubectl get pods -n mini-platform
+  ```
+  * Watch pods:
+    ```powershell
+    kubectl get pods -n mini-platform -w
+    ```
 ### Access the service (port-forward)
 * kubectl port-forward -n mini-platform svc/mini-api-svc 8080:80
 ### Rolling update (deploy new version)
