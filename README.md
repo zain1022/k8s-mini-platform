@@ -103,7 +103,7 @@
   * kubectl get hpa -n mini-platform -w
   * kubectl get deploy -n mini-platform -w
 * Stop load -> Ctrl+C in the busybox terminal
-### Debug / Troubleshooting commands (very important for interviews)
+### Debug / Important Troubleshooting Commands (very important for interviews)
 * kubectl logs -n mini-platform deploy/mini-api --tail=50
 * kubectl logs -n mini-platform <pod-name> --previous
 * kubectl describe pod -n mini-platform <pod-name>
@@ -123,7 +123,3 @@
 * scripts/start.ps1 – starts Minikube and deploys the app
 * scripts/deploy.ps1 – rebuilds the image and performs a rolling update
 * scripts/portforward.ps1 – exposes the service locally
-### Important Troubleshooting Commands:
-* kubectl logs -n mini-platform deploy/mini-api --tail=50
-* kubectl describe pod -n mini-platform <pod-name>
-* kubectl get events -n mini-platform --sort-by=.metadata.creationTimestamp | Select-Object -Last 20
