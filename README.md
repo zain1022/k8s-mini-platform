@@ -33,15 +33,15 @@
     * In /health you should see ENV and MESSAGE coming from your ConfigMap.
   * http://localhost:8080/items
 * Additionally, we can confirm ConfigMap injection using the following commands:
-  * kubectl get configmap -n mini-platform
-  * kubectl describe configmap -n mini-platform api-config
+  * ```kubectl get configmap -n mini-platform```
+  * ```kubectl describe configmap -n mini-platform api-config```
   * Exec into a pod and print env vars:
-    * kubectl get pods -n mini-platform
-    * kubectl exec -n mini-platform -it <pod-name> -- sh
+    * ```kubectl get pods -n mini-platform```
+    * ```kubectl exec -n mini-platform -it <pod-name> -- sh```
     * Inside pod:
-      * echo $ENV
-      * echo $MESSAGE
-      * exit
+      * ```echo $ENV```
+      * ```echo $MESSAGE```
+      * ```exit```
 * To do a rolling update, we update/change our app (ex. update /items list or message format) then we build new image:
   * & minikube -p minikube docker-env --shell powershell | Invoke-Expression
   * docker build -t mini-api:2.0 .
