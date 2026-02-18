@@ -119,17 +119,6 @@
 * kubectl scale deployment -n mini-platform mini-api --replicas=2
 #### Other commands:
 * kubectl describe deploy -n mini-platform mini-api
-* kubectl get pods -n mini-platform
-* kubectl get hpa -n mini-platform
-* kubectl get all -n mini-platform
-* kubectl top nodes
-* kubectl top pods -n mini-platform
-* & minikube -p minikube docker-env --shell powershell | Invoke-Expression
-* docker build -t mini-api:2.0 .
-* kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0
-* kubectl rollout status -n mini-platform deployment/mini-api
-* kubectl rollout undo -n mini-platform deployment/mini-api
-* kubectl rollout status -n mini-platform deployment/mini-api
 ## Important Troubleshooting Commands:
 * kubectl logs -n mini-platform deploy/mini-api --tail=50
 * kubectl describe pod -n mini-platform <pod-name>
