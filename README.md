@@ -71,11 +71,31 @@
 ### Point Docker to Minikube’s Docker (IMPORTANT on Windows)
 * & minikube -p minikube docker-env --shell powershell | Invoke-Expression
 ### Build the Docker image
+* docker build -t mini-api:1.0 .
+* docker images mini-api
+* Rebuild for update (force clean build): docker build --no-cache -t mini-api:2.0 .
 ### Deploy to Kubernetes
+* kubectl apply -f manifests/ (Can also apply each manifest individually)
+* Check status:
+ * kubectl get all -n mini-platform
+ * kubectl get pods -n mini-platform
+* Watch pods -> kubectl get pods -n mini-platform -w
 ### Access the service (port-forward)
+* kubectl port-forward -n mini-platform svc/mini-api-svc 8080:80
 ### Rolling update (deploy new version)
+* docker build --no-cache -t mini-api:2.0 .
+* Update deployment:
+ *  kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0
+ *  kubectl rollout status -n mini-platform deployment/mini-api
+ *  kubectl get pods -n mini-platform
 ### Rollback (undo deployment)
+* kubectl rollout undo -n mini-platform deployment/mini-api
+* kubectl rollout status -n mini-platform deployment/mini-api
 ### Autoscaling (HPA) demo – generate load
+* Check HPA + metrics:
+* Start load generator:
+* Inside the pod:
+* Watch scaling (new terminal):
 ### Debug / Troubleshooting commands (very important for interviews)
 ### Service & endpoints checks
 ### Scale manually (optional cleanup)
