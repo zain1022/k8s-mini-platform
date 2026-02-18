@@ -70,16 +70,28 @@
 ## Here is an overall breakdown of Demo Commands used including some already mentioned in the 'how to run' section:
 * This section shows how to build, deploy, update, scale, and debug the service on Minikube.
 ### Start Minikube + Prereqs:
-* minikube start --driver=docker
-* minikube addons enable metrics-server
-* kubectl get nodes
-* kubectl top nodes
+```powershell
+minikube start --driver=docker
+```
+```powershell
+minikube addons enable metrics-server
+```
+```powershell
+kubectl get nodes
+```
+```powershell
+kubectl top nodes
+```
 ### Point Docker to Minikube’s Docker (IMPORTANT on Windows)
-* & minikube -p minikube docker-env --shell powershell | Invoke-Expression
+```powershell
+& minikube -p minikube docker-env --shell powershell | Invoke-Expression
+```
 ### Build the Docker image
-* docker build -t mini-api:1.0 .
-* docker images mini-api
-* Rebuild for update (force clean build): docker build --no-cache -t mini-api:2.0 .
+```powershell
+docker build -t mini-api:1.0 .
+docker images mini-api
+Rebuild for update (force clean build): docker build --no-cache -t mini-api:2.0 .
+```
 ### Deploy to Kubernetes
 * kubectl apply -f manifests/ (Can also apply each manifest individually)
 * Check status:
@@ -122,15 +134,15 @@ kubectl describe pod -n mini-platform <pod-name>
 ```powershell
 kubectl get events -n mini-platform --sort-by=.metadata.creationTimestamp | Select-Object -Last 20
 ```
-* Exec into a pod:
+Exec into a pod:
 ```powershell
 kubectl exec -n mini-platform -it <pod-name> -- sh
 ```
-  * Check env vars inside pod:
-    ```powershell
-    echo $ENV
-    echo $MESSAGE
-    ```
+Check env vars inside pod:
+```powershell
+echo $ENV
+echo $MESSAGE
+```
 ### Service & endpoints checks
 ```powershell
 kubectl get svc -n mini-platform
