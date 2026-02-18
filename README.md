@@ -15,8 +15,10 @@
 * HPA
 ## How to run:
 * Make sure you have Minikube and Docker Desktop both installed on your machine. The project can be done on a terminal or IDE, I chose to do it on VS code.
-* Go to VS Code terminal and type: ```powershell
-minikube start --driver=docker```
+* Go to VS Code terminal and type:
+```powershell
+minikube start --driver=docker
+```
 * Once it is running, you can try ```powershell
 kubectl get nodes```, to see if kubectl works and gives you a list of nodes in your cluster.
 * You can also do 'kubectl get all' to see all services.
