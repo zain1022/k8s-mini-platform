@@ -26,9 +26,9 @@
   * ```docker images | Select-String mini-api```
   * Note: Make sure that when you build the image your files are in the correct folders in order for the code to work properly.
   * You can check and make sure they are in the right place by looking at the directory, and also by doing ```Get-Content .\<file_name>```
-* Afterwards, apply all the mainfests using 'kubectl apply -f' command.
-* You can do 'kubectl get all -n mini-platform' to make sure everything is running and 'kubectl get pods -n mini-platform' to see the pods in the mini-platform namespace.
-* Next we need to test our service by doing 'kubectl port-forward -n mini-platform svc/mini-api-svc 8080:80' this will establish our connection and we can check if it works by using curl or going to these links in our browser:
+* Afterwards, apply all the mainfests using ```kubectl apply -f``` command.
+* You can do ```kubectl get all -n mini-platform``` to make sure everything is running and ```kubectl get pods -n mini-platform``` to see the pods in the mini-platform namespace.
+* Next we need to test our service by doing ```kubectl port-forward -n mini-platform svc/mini-api-svc 8080:80``` this will establish our connection and we can check if it works by using curl or going to these links in our browser:
   * http://localhost:8080/health
     * In /health you should see ENV and MESSAGE coming from your ConfigMap.
   * http://localhost:8080/items
