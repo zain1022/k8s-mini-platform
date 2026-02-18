@@ -62,6 +62,7 @@
 * You can stop load with Ctrl+C in the loadgen terminal.
 * When you generate load you should see CPU utilization change and more replicas created, once you stop the load it should terminate the other ones and scale down back to it's original utilization.
 ## Here is an overall breakdown of Demo Commands used including some already mentioned in the 'how to run' section:
+* This section shows how to build, deploy, update, scale, and debug the service on Minikube.
 ### Start Minikube + Prereqs:
 * minikube start --driver=docker
 * minikube addons enable metrics-server
