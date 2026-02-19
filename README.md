@@ -144,7 +144,7 @@ kubectl get hpa -n mini-platform -w
 kubectl get deploy -n mini-platform -w
 ```
 * Stop load -> Ctrl+C in the busybox terminal
-### Debug / Important Troubleshooting Commands (very important for interviews)
+### Debug / Important Troubleshooting Commands (very important)
 ```powershell
 kubectl logs -n mini-platform deploy/mini-api --tail=50
 ```
