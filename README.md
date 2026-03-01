@@ -35,6 +35,8 @@
     * In /health you should see ENV and MESSAGE coming from your ConfigMap.
   * http://localhost:8080/items
 <img width="941" height="73" alt="Screenshot 2026-02-16 222643" src="https://github.com/user-attachments/assets/b79cf5f5-968a-48d5-99c5-1c11f86c0ec0" />
+<img width="1911" height="917" alt="Screenshot 2026-02-16 222743" src="https://github.com/user-attachments/assets/0785427d-f72a-47e6-8d93-8fe470f9e654" />
+
 
 * Additionally, we can confirm ConfigMap injection using the following commands:
   * ```kubectl get configmap -n mini-platform```
