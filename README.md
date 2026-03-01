@@ -28,7 +28,7 @@
   * You can check and make sure they are in the right place by looking at the directory, and also by doing ```Get-Content .\<file_name>```
 * Afterwards, apply all the mainfests using ```kubectl apply -f``` command.
 * You can do ```kubectl get all -n mini-platform``` to make sure everything is running and ```kubectl get pods -n mini-platform``` to see the pods in the mini-platform namespace.
-<img width="936" height="291" alt="Screenshot 2026-02-16 222120" src="https://github.com/user-attachments/assets/9198a839-f065-4bff-bc5a-1d22c9f25022" />
+* <img width="936" height="291" alt="Screenshot 2026-02-16 222120" src="https://github.com/user-attachments/assets/9198a839-f065-4bff-bc5a-1d22c9f25022" />
 * Next we need to test our service by doing ```kubectl port-forward -n mini-platform svc/mini-api-svc 8080:80``` this will establish our connection and we can check if it works by using curl or going to these links in our browser:
   * http://localhost:8080/health
     * In /health you should see ENV and MESSAGE coming from your ConfigMap.
