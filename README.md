@@ -54,7 +54,11 @@
   * ```kubectl set image -n mini-platform deployment/mini-api api=mini-api:2.0```
   * ```kubectl rollout status -n mini-platform deployment/mini-api```
   * ```kubectl get pods -n mini-platform```
+<img width="1006" height="107" alt="Screenshot 2026-02-16 230452" src="https://github.com/user-attachments/assets/ab75bf1c-1b44-4652-b89c-97e66fa1106b" />
+
   * Confirm it's updated by refreshing http://localhost:8080/items, we should see the new changes there.
+<img width="312" height="198" alt="Screenshot 2026-02-16 230853" src="https://github.com/user-attachments/assets/23bcce7d-e23e-44d6-a309-6769de1ccf2b" />
+
 * We can also do a rollback:
   * ```kubectl rollout undo -n mini-platform deployment/mini-api```
   * ```kubectl rollout status -n mini-platform deployment/mini-api```
