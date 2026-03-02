@@ -63,7 +63,7 @@
   * ```kubectl rollout undo -n mini-platform deployment/mini-api```
   * ```kubectl rollout status -n mini-platform deployment/mini-api```
   * When you refresh page/items should be back to how they were before the update.
-  <img width="918" height="91" alt="Screenshot 2026-02-16 231227" src="https://github.com/user-attachments/assets/a34e3c0f-e65d-4cbc-af91-afaba5ea61ff" />
+<img width="918" height="91" alt="Screenshot 2026-02-16 231227" src="https://github.com/user-attachments/assets/a34e3c0f-e65d-4cbc-af91-afaba5ea61ff" />
 
 * Lastly, we can also do an autoscaling (HPA) demo:
 * First we need to confirm metrics work ->
@@ -76,6 +76,8 @@
 * In another terminal you can watch the scaling:
   * ```kubectl get hpa -n mini-platform -w```
   * ```kubectl get deploy -n mini-platform -w```
+<img width="797" height="139" alt="Screenshot 2026-02-16 233221" src="https://github.com/user-attachments/assets/5a0d15dd-07f2-4624-b9dd-721b72ba0951" />
+
 * You can stop load with Ctrl+C in the loadgen terminal.
 * When you generate load you should see CPU utilization change and more replicas created, once you stop the load it should terminate the other ones and scale down back to it's original utilization.
 ## Here is an overall breakdown of Demo Commands used including some already mentioned in the 'how to run' section:
