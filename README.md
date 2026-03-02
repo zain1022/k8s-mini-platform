@@ -77,6 +77,7 @@
   * ```kubectl get hpa -n mini-platform -w```
   * ```kubectl get deploy -n mini-platform -w```
 <img width="797" height="139" alt="Screenshot 2026-02-16 233221" src="https://github.com/user-attachments/assets/5a0d15dd-07f2-4624-b9dd-721b72ba0951" />
+<img width="792" height="255" alt="Screenshot 2026-02-16 233212" src="https://github.com/user-attachments/assets/d1ca657c-c118-4fdb-a481-30bdc20d8661" />
 
 * You can stop load with Ctrl+C in the loadgen terminal.
 * When you generate load you should see CPU utilization change and more replicas created, once you stop the load it should terminate the other ones and scale down back to it's original utilization.
