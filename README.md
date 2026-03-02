@@ -63,6 +63,8 @@
   * ```kubectl rollout undo -n mini-platform deployment/mini-api```
   * ```kubectl rollout status -n mini-platform deployment/mini-api```
   * When you refresh page/items should be back to how they were before the update.
+  <img width="918" height="91" alt="Screenshot 2026-02-16 231227" src="https://github.com/user-attachments/assets/a34e3c0f-e65d-4cbc-af91-afaba5ea61ff" />
+
 * Lastly, we can also do an autoscaling (HPA) demo:
 * First we need to confirm metrics work ->
   * ```kubectl top nodes```
